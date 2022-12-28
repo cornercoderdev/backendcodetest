@@ -18,8 +18,4 @@ describe('BusinfoService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
-
-  it('', () => {
-    expect(service).toBeDefined();
-  });
 });
