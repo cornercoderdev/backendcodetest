@@ -1,7 +1,7 @@
 # Seoul Bus Route Information API
 
 To check the code, run
-> npm i nest -g
+> npm i -g @nestjs/cli
 
 > npm run build
 
