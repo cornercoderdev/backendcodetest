@@ -8,11 +8,7 @@ export class BusinfoController {
   @Get()
   getAll() {
     try {
-      // return this.businfoService.getAllStation();
-      // return this.businfoService.selectBusyStations();
-      // return this.businfoService.extractRandomRoutes();
       return this.businfoService.listBusInfo();
-      // return this.businfoService.getAllRoutes();
     } catch (e) {
       throw new BadRequestException(e);
     }
