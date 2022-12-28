@@ -182,7 +182,6 @@ export class BusinfoService {
    */
   async getBusyStations(stations: StationDto[]): Promise<StationDto[]> {
     let allStationsWithArrivalInfo: StationDto[] = [];
-    let arrivalInfoRequestCount = 0; // TODO. remove this line
 
     // get arrival info
     for (let i = 0; i < stations.length; i++) {
@@ -202,15 +201,12 @@ export class BusinfoService {
         };
       }
 
-      arrivalInfoRequestCount++; // TODO. remove this line
       // filter buses arriving in 5 min
       arrivalInfo = arrivalInfo.filter(
         (item) => Number(item.traTime1) <= 300 && Number(item.traTime1) > 0,
       );
       station.arrival = arrivalInfo;
       allStationsWithArrivalInfo.push(station);
-
-      if (arrivalInfoRequestCount > 3) break; // TODO. remove this line
     }
 
     allStationsWithArrivalInfo = allStationsWithArrivalInfo.sort(
